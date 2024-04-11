@@ -1,3 +1,88 @@
-h1 {
-  color: pink;
+.mainBodyStyle{
+height: 500px;
+width: 250px;
+margin: auto;
+margin-top: 40px;
+border: dashed;
+border-color: black;
+border-width: 2px;
+}
+
+.cityBoxStyle{
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  border-color: black;
+  border-width: 1px;
+  min-height: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.cityTagStyle{
+  min-height: 20px;
+  background-color:#FFC16F;
+  border-bottom: black;
+  border-bottom: solid;
+  border-bottom-width: 1px;
+}
+
+.cityInputStyle{
+  min-height: 40px;
+}
+
+.tempBoxStyle{
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  border-color: black;
+  border-width: 1px;
+  min-height: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.tempTagStyle{
+  min-height: 20px;
+  background-color:#FFC16F;
+  border-bottom: black;
+  border-bottom: solid;
+  border-bottom-width: 1px;
+}
+
+.tempJustifierStyle{
+  display: flex;
+  height: 40px;
+}
+
+.kelvinBoxStyle{
+  /* border: black;
+  border: solid;
+  border-right-width: 1px; */
+  width: 70px;
+  height: 40px;
+  
+}
+
+.fahrenheitBoxStyle{
+  border: black;
+  border: solid;
+  border-left-width: 1px;
+  border-right-width: 1px ;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  width: 70px;
+  height: 40px; 
+  
+}
+
+.celsiusBoxStyle{
+  /* border: black;
+  border: solid;
+  border-left-width: 1px; */
+  width: 70px;
+  height: 40px;
+  
 }
