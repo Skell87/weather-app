@@ -58,6 +58,32 @@ celsiusBox.classList.add('celsiusBoxStyle');
 tempJustifier.append(celsiusBox);
 
 
+// condition 
+const conditionBox = document.createElement('div');
+conditionBox.classList.add('conditionBoxStyle');
+mainBody.append(conditionBox);
+
+const conditionTag = document.createElement('div');
+conditionTag.classList.add('conditionTagStyle');
+conditionBox.append(conditionTag);
+
+const conditionInput = document.createElement('div');
+conditionInput.classList.add('conditionInputStyle');
+conditionBox.append(conditionInput);
+
+// other info
+const infoBox = document.createElement('div');
+infoBox.classList.add('infoBoxStyle');
+mainBody.append(infoBox);
+
+const infoBoxTag = document.createElement('div');
+infoBoxTag.classList.add('infoBoxTagStyle');
+infoBox.append(infoBoxTag);
+
+const infoBoxContent = document.createElement('div');
+infoBoxContent.classList.add('infoBoxContentStyle');
+infoBox.append(infoBoxContent);
+
 
 
 // geolocator and weather api.

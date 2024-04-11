@@ -86,3 +86,51 @@ border-width: 2px;
   height: 40px;
   
 }
+
+.conditionBoxStyle{
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  border-color: black;
+  border-width: 1px;
+  min-height: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.conditionTagStyle{
+  min-height: 20px;
+  background-color:#FFC16F;
+  border-bottom: black;
+  border-bottom: solid;
+  border-bottom-width: 1px;
+}
+
+.conditionInputStyle{
+  min-height: 40px;
+}
+
+.infoBoxStyle{
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  border-color: black;
+  border-width: 1px;
+  min-height: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.infoBoxTagStyle{
+  min-height: 20px;
+  background-color:#FFC16F;
+  border-bottom: black;
+  border-bottom: solid;
+  border-bottom-width: 1px;
+}
+
+.infoBoxContentStyle{
+  height: 170px;
+}
