@@ -1,4 +1,10 @@
+#app{
+  align-items: center;
+  text-align: center;
+}
+
 .mainBodyStyle{
+  text-align: center;
 height: 500px;
 width: 250px;
 margin: auto;
@@ -21,6 +27,7 @@ border-width: 2px;
 }
 
 .cityTagStyle{
+  text-align: center;
   min-height: 20px;
   background-color:#FFC16F;
   border-bottom: black;
@@ -45,6 +52,7 @@ border-width: 2px;
 }
 
 .tempTagStyle{
+  text-align: center;
   min-height: 20px;
   background-color:#FFC16F;
   border-bottom: black;
@@ -100,6 +108,7 @@ border-width: 2px;
 }
 
 .conditionTagStyle{
+  text-align: center;
   min-height: 20px;
   background-color:#FFC16F;
   border-bottom: black;
@@ -124,6 +133,7 @@ border-width: 2px;
 }
 
 .infoBoxTagStyle{
+  text-align: center;
   min-height: 20px;
   background-color:#FFC16F;
   border-bottom: black;

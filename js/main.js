@@ -2,6 +2,8 @@ import axios from "axios";
 console.log('main.js loaded');
     // get weather button as a constant, creating a 'button' element in our document.
 const weatherButton = document.createElement('button');
+weatherButton.classList.add('weatherButtonStyle');
+
     // the text content of the button is get weather.
 weatherButton.textContent = 'Get Weather.';
     // this appends the button to the child of body
@@ -19,6 +21,7 @@ mainBody.append(cityBox);
 
 // this is the tag that says "city" in orange
 const cityTag = document.createElement('div');
+cityTag.textContent ='City.';
 cityTag.classList.add('cityTagStyle');
 cityBox.append(cityTag);
 
@@ -36,6 +39,7 @@ mainBody.append(tempBox);
 
 //this is the tag that says "temperature" in orange
 const tempTag = document.createElement('div');
+tempTag.textContent ="Temperature.";
 tempTag.classList.add('tempTagStyle');
 tempBox.append(tempTag);
 
@@ -57,13 +61,13 @@ const celsiusBox = document.createElement('div');
 celsiusBox.classList.add('celsiusBoxStyle');
 tempJustifier.append(celsiusBox);
 
-
 // condition 
 const conditionBox = document.createElement('div');
 conditionBox.classList.add('conditionBoxStyle');
 mainBody.append(conditionBox);
 
 const conditionTag = document.createElement('div');
+conditionTag.textContent = "Condition.";
 conditionTag.classList.add('conditionTagStyle');
 conditionBox.append(conditionTag);
 
@@ -77,6 +81,7 @@ infoBox.classList.add('infoBoxStyle');
 mainBody.append(infoBox);
 
 const infoBoxTag = document.createElement('div');
+infoBoxTag.textContent = "Logo."
 infoBoxTag.classList.add('infoBoxTagStyle');
 infoBox.append(infoBoxTag);
 
@@ -84,6 +89,18 @@ const infoBoxContent = document.createElement('div');
 infoBoxContent.classList.add('infoBoxContentStyle');
 infoBox.append(infoBoxContent);
 
+// spinner
+// const spinner = document.createElement('div');
+// spinner.classList.add('spinner-border');
+// const innerSpinner = document.createElement('span');
+// innerSpinner.classList.add("sr-only");
+// spinner.appendChild(innerSpinner);
+
+function fahrenheitTempConversion(){
+    let rawTemp = response.data.main.temp;
+    let fahrenheit = 32 + 5/9 * (273.15-rawTemp)
+    return fahrenheit;
+}
 
 
 // geolocator and weather api.
@@ -94,6 +111,12 @@ infoBox.append(infoBoxContent);
 
         console.log('geolocation');
 
+    axios.get(`http://api.openweathermap.org/geo/1.0/reverse?lat=${latLong[0]}&lon=${latLong[1]}&limit=${1}&appid=58870a89a0e26793783ede860847d0fe`)
+    .then((response) => {
+        console.log('lat long', response.data[0].name)
+        cityInput.textContent = response.data[0].name;
+    })
+
     axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latLong[0]}&lon=${latLong[1]}&appid=58870a89a0e26793783ede860847d0fe`)
         .then((response) => {
             console.log(response.data);
@@ -103,9 +126,16 @@ infoBox.append(infoBoxContent);
             console.log(response.headers);
             console.log(response.config);
             // below button gets temp data.
-            weatherButton.addEventListener('click', () => {
-                alert(`the temp in kelvin is ${response.data.main.temp}`);
-            })
+            // weatherButton.addEventListener('click', () => {
+                 console.log("here")
+                kelvinBox.textContent = (`${Math.floor(response.data.main.temp)} K`);
+                fahrenheitBox.textContent = (`${Math.floor((response.data.main.temp-273.15) * 9/5 + 32)} F`);
+                celsiusBox.textContent = (`${Math.floor(response.data.main.temp - 273.15)} C`);
+                conditionInput.textContent = (`${response.data.weather[0].description}`);
+                console.log('were not here')
+                spinner.classList.add("d-none");
+                document.getElementById('app').classList.remove('d-none')
+            // })
              });
          });
      
@@ -113,4 +143,8 @@ infoBox.append(infoBoxContent);
 
       // markup and add event listeners prior to axios call.
 
+  // need a function to turn incoming kelvin data into rounded kelvin, F and C
+
   
+  
+ 
