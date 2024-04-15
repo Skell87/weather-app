@@ -109,7 +109,7 @@ function fahrenheitTempConversion(){
 
         console.log('geolocation');
 
-    axios.get(`http://api.openweathermap.org/geo/1.0/reverse?lat=${latLong[0]}&lon=${latLong[1]}&limit=${1}&appid=58870a89a0e26793783ede860847d0fe`)
+    axios.get(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latLong[0]}&lon=${latLong[1]}&limit=${1}&appid=58870a89a0e26793783ede860847d0fe`)
     .then((response) => {
         console.log('lat long', response.data[0].name)
         cityInput.textContent = response.data[0].name;
