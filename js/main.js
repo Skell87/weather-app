@@ -1,13 +1,13 @@
 import axios from "axios";
 console.log('main.js loaded');
     // get weather button as a constant, creating a 'button' element in our document.
-const weatherButton = document.createElement('button');
-weatherButton.classList.add('weatherButtonStyle');
+// const weatherButton = document.createElement('button');
+// weatherButton.classList.add('weatherButtonStyle');
 
     // the text content of the button is get weather.
-weatherButton.textContent = 'Get Weather.';
+// weatherButton.textContent = 'Get Weather.';
     // this appends the button to the child of body
-document.body.appendChild(weatherButton);
+// document.body.appendChild(weatherButton);
 
 // this is the app body design.
 const mainBody = document.createElement('div');
@@ -86,15 +86,13 @@ infoBoxTag.classList.add('infoBoxTagStyle');
 infoBox.append(infoBoxTag);
 
 const infoBoxContent = document.createElement('div');
+infoBoxContent.className = "infoBoxContentClass";
 infoBoxContent.classList.add('infoBoxContentStyle');
 infoBox.append(infoBoxContent);
 
-// spinner
-// const spinner = document.createElement('div');
-// spinner.classList.add('spinner-border');
-// const innerSpinner = document.createElement('span');
-// innerSpinner.classList.add("sr-only");
-// spinner.appendChild(innerSpinner);
+// const iconArray = [
+//     {name: "04n", image:"icons\04n.png"}
+// ];
 
 function fahrenheitTempConversion(){
     let rawTemp = response.data.main.temp;
@@ -125,26 +123,21 @@ function fahrenheitTempConversion(){
             console.log(response.statusText);
             console.log(response.headers);
             console.log(response.config);
-            // below button gets temp data.
-            // weatherButton.addEventListener('click', () => {
-                 console.log("here")
-                kelvinBox.textContent = (`${Math.floor(response.data.main.temp)} K`);
-                fahrenheitBox.textContent = (`${Math.floor((response.data.main.temp-273.15) * 9/5 + 32)} F`);
-                celsiusBox.textContent = (`${Math.floor(response.data.main.temp - 273.15)} C`);
-                conditionInput.textContent = (`${response.data.weather[0].description}`);
-                console.log('were not here')
-                spinner.classList.add("d-none");
-                document.getElementById('app').classList.remove('d-none')
-            // })
+            console.log("here")
+            
+            kelvinBox.textContent = (`${Math.floor(response.data.main.temp)} K`);
+            fahrenheitBox.textContent = (`${Math.floor((response.data.main.temp-273.15) * 9/5 + 32)} F`);
+            celsiusBox.textContent = (`${Math.floor(response.data.main.temp - 273.15)} C`);
+            conditionInput.textContent = (`${response.data.weather[0].description}`);
+            // infoBoxContent.getElementsByClassName('infoBoxContentClass') = (iconArray[0]);
+            // infoBoxContent = weatherImage;
+            console.log('were not here') 
              });
          });
      
       console.log('end')
 
-      // markup and add event listeners prior to axios call.
-
-  // need a function to turn incoming kelvin data into rounded kelvin, F and C
-
+      
   
   
  
