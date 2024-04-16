@@ -92,6 +92,7 @@ infoBoxContent.classList.add('infoBoxContentStyle');
 infoBox.append(infoBoxContent);
 
 const imageElement = document.createElement('img');
+imageElement.classList.add('imageElementStyle');
 infoBoxContent.append(imageElement);
 
 

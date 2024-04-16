@@ -143,4 +143,11 @@ border-width: 2px;
 
 .infoBoxContentStyle{
   height: 170px;
+  
+}
+
+.imageElementStyle{
+  height: 120px;
+  width: 120px;
+  margin-top: 15px;
 }
