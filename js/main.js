@@ -87,18 +87,13 @@ infoBox.append(infoBoxTag);
 
 const infoBoxContent = document.createElement('div');
 infoBoxContent.className = "infoBoxContentClass";
+infoBoxContent.id = "infoBoxId";
 infoBoxContent.classList.add('infoBoxContentStyle');
 infoBox.append(infoBoxContent);
 
-// const iconArray = [
-//     {name: "04n", image:"icons\04n.png"}
-// ];
+const imageElement = document.createElement('img');
+infoBoxContent.append(imageElement);
 
-function fahrenheitTempConversion(){
-    let rawTemp = response.data.main.temp;
-    let fahrenheit = 32 + 5/9 * (273.15-rawTemp)
-    return fahrenheit;
-}
 
 
 // geolocator and weather api.
@@ -129,8 +124,12 @@ function fahrenheitTempConversion(){
             fahrenheitBox.textContent = (`${Math.floor((response.data.main.temp-273.15) * 9/5 + 32)} F`);
             celsiusBox.textContent = (`${Math.floor(response.data.main.temp - 273.15)} C`);
             conditionInput.textContent = (`${response.data.weather[0].description}`);
-            // infoBoxContent.getElementsByClassName('infoBoxContentClass') = (iconArray[0]);
-            // infoBoxContent = weatherImage;
+
+            let icon = (response.data.weather[0].icon);
+            // console.log (icon);
+            // console.log (infoBoxContent.textContent = (`https://openweathermap.org/img/wn/${icon}@2x.png`))
+            imageElement.src = `https://openweathermap.org/img/wn/${icon}@2x.png`
+            
             console.log('were not here') 
              });
          });
